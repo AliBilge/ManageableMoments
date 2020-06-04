@@ -1,26 +1,13 @@
 .App {
-  text-align: center;
-  color: rgb(51, 51, 109);
+  background-color: rgb(243, 241, 235);
 }
-
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-h1   {
+h1, i {
   font-family:'Slackey', cursive;
-  font-size: 2rem;
+  font-size: 3.25rem;
+  color: rgb(60, 64, 110);
 }
-
+h2 {
+  font-family:'Raleway', cursive;
+  font-size: 2.5rem;
+  color: rgb(60, 64, 110);
+}
