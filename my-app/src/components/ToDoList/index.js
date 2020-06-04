@@ -1,5 +1,9 @@
 import React, {Component} from 'react'
 import './styles.css'
+import ItemList from'./component/ItemList'
+
+
+
 class ToDoList extends Component {
     state = {
         list: [],
@@ -35,7 +39,12 @@ class ToDoList extends Component {
                 </button>
                 <ul>
                     {
-                        this.state.list.map((item, index) => (<li key={index}>(item)</li>))
+                        this.state.list.map((item, index) => (
+                        <ItemList 
+                            key={index}
+                            text={item}
+                        />
+                                               ))
                     }
 
                 </ul>
