@@ -1,4 +1,4 @@
-import React from 'react';
+import *as  React  from 'react';
 import './App.css';
 import { Grid, Container, Header, Icon, Button,Segment } from "semantic-ui-react";
 
