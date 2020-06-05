@@ -9,6 +9,8 @@ class ToDoList extends Component {
         list: [],
         valueInput: ""
     }
+
+
     addItemToList =()=> {
         if (this.state.valueInput){
             this.setState({
@@ -18,12 +20,16 @@ class ToDoList extends Component {
         }
         console.log(this.state.list)
     }
+
+// Capture the entered characters
     handleChangeInput =(e)=> {
         this.setState({
             valueInput: e.target.value
         })
-        console.log(e.target.value)
     }
+
+
+// ===================== RENDER =======================
     render () {
         return (
             <div className = "wrapper">
@@ -44,9 +50,8 @@ class ToDoList extends Component {
                             key={index}
                             text={item}
                         />
-                                               ))
+                        ))
                     }
-
                 </ul>
             </div>
         )

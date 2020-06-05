@@ -1,5 +1,4 @@
-import React from 'react';
-import logo from './logo.svg';
+import * as React from 'react';
 import './App.css';
 import MyHeader from './containers/MyHeader'
 import MyButton from './components/MyButton'
