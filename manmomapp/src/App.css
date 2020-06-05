@@ -1,13 +1,11 @@
 .App {
   background-color: rgb(243, 241, 235);
 }
-h1, i {
+h1,h2, i {
   font-family:'Slackey', cursive;
-  font-size: 3.25rem;
+  font-size: 3rem;
   color: rgb(60, 64, 110);
 }
 h2 {
-  font-family:'Raleway', cursive;
-  font-size: 2.5rem;
-  color: rgb(60, 64, 110);
+  font-size: 1.75rem;
 }
