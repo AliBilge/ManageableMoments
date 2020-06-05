@@ -4,7 +4,7 @@ class ItemList extends Component {
     render () {
         return (
             <li>
-                {this.props.text}
+                {this.props.children}
                 <button>delete</button>
             
             </li>

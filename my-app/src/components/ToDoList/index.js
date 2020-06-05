@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import './styles.css'
 import ItemList from'./component/ItemList'
+//import Checkbox from './Checkbox'
 
 
 
@@ -10,7 +11,7 @@ class ToDoList extends Component {
         valueInput: ""
     }
 
-
+// If something has been entered, attach it to the list
     addItemToList =()=> {
         if (this.state.valueInput){
             this.setState({
@@ -29,7 +30,7 @@ class ToDoList extends Component {
     }
 
 
-// ===================== RENDER =======================
+//===================== RENDER =======================
     render () {
         return (
             <div className = "wrapper">
@@ -45,11 +46,12 @@ class ToDoList extends Component {
                 </button>
                 <ul>
                     {
+                        // Appending the entered text:
                         this.state.list.map((item, index) => (
-                        <ItemList 
+                        <ItemList
                             key={index}
-                            text={item}
-                        />
+                            // text={item}. Decided refer to them as "children"
+                           >{item}</ItemList>
                         ))
                     }
                 </ul>
