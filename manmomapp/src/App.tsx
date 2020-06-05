@@ -37,11 +37,14 @@ function App() {
         </div>
         <div className="ui grid container">
           <div className="four wide column"></div>
-          <div className="two wide column">
+          <div className="one wide column">
             <div className="ui tiny buttons">
-              <button className="ui orange button">Start</button>
+              <button className="ui orange button">
+              <i className="play icon"></i>
+                </button>
               <div className="or"></div>
-              <button className="ui orange button">Pause</button>
+              <button className="ui orange button">
+                <i className="pause icon"></i></button>
             </div>
           </div>
           <div className="one wide column"></div>
@@ -77,8 +80,8 @@ function App() {
             </div>
           </div>
           <div className="ui grid container">
-            <div className="six wide column"></div>
-            <div className="six wide column">
+            <div className="four wide column"></div>
+            <div className="eight wide column">
               <div className="ui raised segments">
                 <div className="ui segment">
                   <h4>Today's Priority Task</h4>
@@ -88,10 +91,27 @@ function App() {
                 </div>
               </div>
             </div>
+            <div className="ui grid container">
+              <div className="four wide column"></div>
+              <div className="eight wide column">
+                <div className="ui raised segments">
+                  <div className="ui segment">
+                    <h4>Additional Tasks</h4>
+                  </div>
+                  <div className="ui segment">
+                    <p>Link content together </p>
+                  </div>
+                  <div className="ui segment">
+                    <p>Make it look beautiful </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      </div>
   );
 }
 
