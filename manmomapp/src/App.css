@@ -1,11 +1,15 @@
 .App {
   background-color: rgb(243, 241, 235);
 }
-h1,h2, i {
+h1,h2,h4, i {
   font-family:'Slackey', cursive;
   font-size: 3rem;
   color: rgb(60, 64, 110);
 }
 h2 {
   font-size: 1.75rem;
+}
+h4 {
+  text-align: center;
+  font-size: 1.25rem;
 }
