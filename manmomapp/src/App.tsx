@@ -104,9 +104,18 @@ function App() {
                   <div className="ui segment">
                     <p>Make it look beautiful </p>
                   </div>
+                  <div className="ui button segment">
+                  <button className="tiny orange ui button"> Add Task</button>
+                  <button className="tiny orange ui button"> Remove Task</button>
+                  <button className="tiny orange ui button"> Change Day</button>
+                  </div>
                 </div>
               </div>
-
+            </div>
+            <div className="ui grid container">
+              <div className="six wide column"></div>
+              <div className="five wide column"><h4>Designed by Code Warriors<br/>2020</h4></div>
+              <div className="six wide column"></div>
             </div>
           </div>
         </div>
