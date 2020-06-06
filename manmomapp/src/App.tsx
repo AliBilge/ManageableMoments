@@ -1,12 +1,13 @@
 import * as React from "react";
 import "./App.css";
 import { Grid, Container, Icon, Button, Segment } from "semantic-ui-react";
+import Countdown from "./components/Countdown";
 
 function App() {
   return (
     <div className="App">
-      <div className="ui grid container">
-        <div className="four wide column"></div>
+      <div className="ui padded grid container">
+        <div className="five wide column"></div>
         <div className="two wide column">
           <i className="calendar check outline icon massive"></i>
         </div>
@@ -32,7 +33,7 @@ function App() {
         </div>
         <div className="ui grid container">
           <div className="six wide column"></div>
-          <div className="six wide column">TIMER GOES HERE</div>
+          <div className="six wide column"><div className="Timers"></div><Countdown /></div>
           <div className="six wide column"></div>
         </div>
         <div className="ui grid container">
