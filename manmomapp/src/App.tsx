@@ -27,12 +27,14 @@ function App() {
            </Container>
       </Grid.Row>
 
+    {/** This where the timer starts */}
       <div>
       <Timer
     initialTime={55000}
     startImmediately={false}
+    direction="backward"
 >
-    {({ start, resume, pause, stop, reset, timerState }) => (
+    {({ start, resume, pause, stop, reset, timerState }: any) => (
         <React.Fragment>
             <div>
                 <Timer.Days /> days
@@ -54,9 +56,9 @@ function App() {
     )}
 </Timer>
       </div>
-     
-    </div>
-    
+{/** This is where the timer end */}     
+
+    </div>    
   );
 }
 
