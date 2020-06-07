@@ -7,19 +7,20 @@ import ReactDOM from "react-dom";
 import moment from "moment";
 
 
-/* from codepen.io/FlorinPop17/pen/YbpwyG - Countdown with ReactJS to build countdown timer */
+/* from codepen.io/FlorinPop17/pen/YbpwyG - Countdown with ReactJS to build countdown timer, with modifications */
 class Countdown extends React.Component {
     state = {
         minutes: undefined,
         seconds: undefined
     }
+    interval!: NodeJS.Timeout;
 
 
 
     componentDidMount() {
         this.interval = setInterval(() => {
-            const { timeFormat } = this.props;
-            const then = moment(timeFormat);
+            const { time } = this.props;
+            const then = moment(time);
             const now = moment();
             const countdown = moment( then - now);
             const minutes = countdown.format('mm');
@@ -76,7 +77,7 @@ const SVGCircle = ({ radius }) => (
 
 ReactDOM.render(
     <Countdown
-        timeFormat="mm a"
+        time ="mm a"
     />,
     document.getElementById('app')
 );
