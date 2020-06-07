@@ -1,115 +1,115 @@
 import React, { Component } from "react";
+import Moment from "react-moment";
+import "moment-timezone";
 import "../App.css";
-import { Grid, Container, Icon, Button, Segment } from "semantic-ui-react"; 
+import { Grid, Container, Icon, Button, Segment } from "semantic-ui-react";
+import ReactDOM from "react-dom";
+import moment from "moment";
 
-class Countdown extends Component {
-  state = {
-    timerOn: false,
-    timerStart: 0,
-    timerTime: 0
-  };
 
-  startTimer = () => {
-    this.setState({
-      timerOn: true,
-      timerTime: this.state.timerTime,
-      timerStart: this.state.timerTime
-    });
-    this.timer = setInterval(() => {
-      const newTime = this.state.timerTime - 10;
-      if (newTime >= 0) {
-        this.setState({
-          timerTime: newTime
-        });
-      } else {
-        clearInterval(this.timer);
-        this.setState({ timerOn: false });
-        alert("Countdown ended");
-      }
-    }, 10);
-  };
-
-  stopTimer = () => {
-    clearInterval(this.timer);
-    this.setState({ timerOn: false });
-  };
-  resetTimer = () => {
-    if (this.state.timerOn === false) {
-      this.setState({
-        timerTime: this.state.timerStart
-      });
+/* from codepen.io/FlorinPop17/pen/YbpwyG - Countdown with ReactJS to build countdown timer */
+class Countdown extends React.Component {
+    state = {
+        minutes: undefined,
+        seconds: undefined
     }
-  };
 
-  adjustTimer = (input: string) => {
-    const { timerTime, timerOn } = this.state;
-    if (!timerOn) {
-      if (input === "incHours" && timerTime + 3600000 < 216000000) {
-        this.setState({ timerTime: timerTime + 3600000 });
-      } else if (input === "decHours" && timerTime - 3600000 >= 0) {
-        this.setState({ timerTime: timerTime - 3600000 });
-      } else if (input === "incMinutes" && timerTime + 60000 < 216000000) {
-        this.setState({ timerTime: timerTime + 60000 });
-      } else if (input === "decMinutes" && timerTime - 60000 >= 0) {
-        this.setState({ timerTime: timerTime - 60000 });
-      } else if (input === "incSeconds" && timerTime + 1000 < 216000000) {
-        this.setState({ timerTime: timerTime + 1000 });
-      } else if (input === "decSeconds" && timerTime - 1000 >= 0) {
-        this.setState({ timerTime: timerTime - 1000 });
-      }
+
+
+    componentDidMount() {
+        this.interval = setInterval(() => {
+            const { timeFormat } = this.props;
+            const then = moment(timeFormat);
+            const now = moment();
+            const countdown = moment( then - now);
+            const minutes = countdown.format('mm');
+            const seconds = countdown.format('ss');
+
+            this.setState({ minutes, seconds });
+        }, 1000);
     }
-  };
-    timer!: NodeJS.Timeout;
 
-  render() {
-    const { timerTime, timerStart, timerOn } = this.state;
-    let seconds = ("0" + (Math.floor((timerTime / 1000) % 60) % 60)).slice(-2);
-    let minutes = ("0" + Math.floor((timerTime / 60000) % 60)).slice(-2);
+    componentWillUnmount() {
+        if (this.interval) {
+            clearInterval(this.interval);
+        }
+    }
 
-    return (
-      <div className="Countdown">
-        <div className="Countdown-header">Countdown</div>
-        <div className="Countdown-label">Hours : Minutes : Seconds</div>
-        <div className="Countdown-display">
-          <button onClick={() => this.adjustTimer("incMinutes")}>
-            &#8679;
-          </button>
-          <button onClick={() => this.adjustTimer("incSeconds")}>
-            &#8679;
-          </button>
+    render() {
+        const { minutes, seconds } = this.state;
+        const minutesRadius = mapNumber(minutes, 60, 0, 0, 360);
+        const secondsRadius = mapNumber(seconds, 60, 0, 0, 360);
 
-          <div className="Countdown-time">
-              {minutes} : {seconds}
-          </div>
+        if (!seconds) {
+            return null;
+        }
 
-     ></div>
-
-        {timerOn === false && (timerStart === 0 || timerTime === timerStart) && (
-          <button className="ui orange button" onClick={this.startTimer}>
-            <i className="play icon"></i>
-          </button>
-        )}
-        {timerOn === true && timerTime >= 1000 && (
-          <button className="Button-stop" onClick={this.stopTimer}>
-            Stop
-          </button>
-        )}
-        {timerOn === false &&
-          (timerStart !== 0 && timerStart !== timerTime && timerTime !== 0) && (
-            <button className="Button-start" onClick={this.startTimer}>
-              Resume
-            </button>
-          )}
-
-        {(timerOn === false || timerTime < 1000) &&
-          (timerStart !== timerTime && timerStart > 0) && (
-            <button className="Button-reset" onClick={this.resetTimer}>
-              Reset
-            </button>
-          )}
-      </div>
-    );
-  }
+        return (
+            <div>
+                <h1>Countdown</h1>
+                <div className='countdown-wrapper'>
+                    {minutes && (
+                        <div className='countdown-item'>
+                            <SVGCircle radius={minutesRadius} />
+                            {minutes}
+                            <span>minutes</span>
+                        </div>
+                    )}
+                    {seconds && (
+                        <div className='countdown-item'>
+                            <SVGCircle radius={secondsRadius} />
+                            {seconds}
+                            <span>seconds</span>
+                        </div>
+                    )}
+                </div>
+            </div>
+        );
+    }
 }
+
+const SVGCircle = ({ radius }) => (
+    <svg className='countdown-svg'>
+        <path fill="none" stroke="#333" stroke-width="4" d={describeArc(50, 50, 48, 0, radius)} />
+    </svg>
+);
+
+ReactDOM.render(
+    <Countdown
+        timeFormat="mm a"
+    />,
+    document.getElementById('app')
+);
+
+// From stackoverflow: https://stackoverflow.com/questions/5736398/how-to-calculate-the-svg-path-for-an-arc-of-a-circle
+function polarToCartesian(centerX: number, centerY: number, radius: number, angleInDegrees: number) {
+    var angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
+
+    return {
+        x: centerX + (radius * Math.cos(angleInRadians)),
+        y: centerY + (radius * Math.sin(angleInRadians))
+    };
+}
+
+function describeArc(x: number, y: number, radius: number, startAngle: number, endAngle: number) {
+
+    var start = polarToCartesian(x, y, radius, endAngle);
+    var end = polarToCartesian(x, y, radius, startAngle);
+
+    var largeArcFlag = endAngle - startAngle <= 180 ? "0" : "1";
+
+    var d = [
+        "M", start.x, start.y,
+        "A", radius, radius, 0, largeArcFlag, 0, end.x, end.y
+    ].join(" ");
+
+    return d;
+}
+
+// Stackoverflow: https://stackoverflow.com/questions/10756313/javascript-jquery-map-a-range-of-numbers-to-another-range-of-numbers
+function mapNumber(number: number | undefined, in_min: number, in_max: number, out_min: number, out_max: number) {
+    return (number - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
+
 
 export default Countdown;
