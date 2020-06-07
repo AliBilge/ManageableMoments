@@ -33,7 +33,7 @@ function App() {
         </div>
         <div className="ui grid container">
           <div className="six wide column"></div>
-          <div className="six wide column"><div className="Timers"></div><Countdown /></div>
+          <div className="six wide column"><div className="timerFace"></div><Countdown /></div>
           <div className="six wide column"></div>
         </div>
         <div className="ui grid container">
