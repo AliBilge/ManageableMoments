@@ -3,19 +3,22 @@
 }
 h1,
 h2,
+h3,
 h4,
-.headerIcon {
+.headerIcon, .timerFace {
   font-family: "Slackey", cursive;
-  font-size: 3rem;
   color: rgb(60, 64, 110);
 }
+h1 {
+  font-size: 3rem;
+}
 
-h2 {
+h2, h3 {
   font-size: 1.75rem;
 }
 h4, .timerFace {
   text-align: center;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 .headerIcon {
   font-size: 1rem;
@@ -29,10 +32,11 @@ h4, .timerFace {
 justify-content: center;
 }
 .timerFace{
-  font-size: 1.75rem;
   box-sizing: border-box;
-  font-family: "Raleway", cursive;
+  align-content: justify;
+  font-family: "Slackey", cursive;
   font-weight: bold;
+  border: solid 2px rgb(209, 143, 21);
   
 
 }

@@ -18,10 +18,12 @@ class tasktimer extends React.Component {
             >
                 {({ start, resume, pause, stop, reset, timerState }) => (
                     <React.Fragment>
-                        <Container className="timerFace">
+                        <Container fluid className="timerFace">
                             <Timer.Minutes /> minutes<br />
                             <Timer.Seconds /> seconds
                   <br /><br/>
+                  </Container>
+
                   <Button.Group>
                             <button className=" ui mini orange button" onClick={start}>
                                 <i className="play icon"></i>
@@ -36,7 +38,7 @@ class tasktimer extends React.Component {
                                 <i className="repeat icon"></i>
                             </button>
                             </Button.Group>
-                        </Container>
+                        
                     </React.Fragment>
                 )}
 

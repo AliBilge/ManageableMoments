@@ -7,8 +7,8 @@ import Tasktimer from "./components/tasktimer";
 function App() {
   return (
     <div className="App">
-      <Grid container columns={5}>
 
+      <Grid container columns={8}>
         <Grid.Column className="headerIcon">
           <i className="calendar check outline icon massive"></i>
         </Grid.Column>
@@ -17,7 +17,7 @@ function App() {
         </Grid.Column>
         <Grid.Column></Grid.Column>
       </Grid>
-      <Grid container columns={4}>
+      <Grid container columns={5}>
         <Grid.Column></Grid.Column>
         <Grid.Column>
           <button className="circular orange ui icon button">
@@ -37,11 +37,11 @@ function App() {
       <Grid container columns={5}>
         <Grid.Column></Grid.Column>
         <Grid.Column className="timer">
-          < Tasktimer time={300000} /><h4>BREAK TIME</h4>
+          < Tasktimer time={300000} /><h3>BREAK TIME</h3>
           </Grid.Column>
           <Grid.Column></Grid.Column>
           <Grid.Column className="timer">
-          <Tasktimer time={1500000} /><h4>TASK TIME</h4>
+          <Tasktimer time={1500000} /><h3>TASK TIME</h3>
         </Grid.Column>
         <Grid.Column></Grid.Column>
       </Grid>
