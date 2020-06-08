@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './App.css';
 import { Grid, Container, Icon, Button, Segment } from "semantic-ui-react";
+import Timer from "react-compound-timer";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
       <div className="six wide column"></div>
       <div className="two wide column">
         <button className="circular orange ui icon button">
-          <i className="angle left icon" />{" "}
+          <i className="angle left icon" />
         </button>
       </div>
       <div className="four wide column">
@@ -32,7 +33,31 @@ function App() {
       </div>
       <div className="ui grid container">
         <div className="six wide column"></div>
-        <div className="six wide column"><div className="timerFace"></div><Countdown /></div>
+        <div className="six wide column">
+        <Timer
+    initialTime={55000}
+>
+    {({ start, resume, pause, stop, reset, timerState }) => (
+        <React.Fragment>
+            <div>
+                <Timer.Minutes /> minutes
+                <Timer.Seconds /> seconds
+            </div>
+            <div>{timerState}</div>
+            <br />
+            <div>
+                <button onClick={start}>Start</button>
+                <button onClick={pause}>Pause</button>
+                <button onClick={resume}>Resume</button>
+                <button onClick={stop}>Stop</button>
+                <button onClick={reset}>Reset</button>
+            </div>
+        </React.Fragment>
+    )}
+</Timer>
+
+          
+        </div>
         <div className="six wide column"></div>
       </div>
       <div className="ui grid container">
