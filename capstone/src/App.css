@@ -9,23 +9,27 @@ h4,
   font-size: 3rem;
   color: rgb(60, 64, 110);
 }
-h1{
-  text-align: left;
-}
+
 h2 {
   font-size: 1.75rem;
 }
-h4 {
+h4, .timerFace {
   text-align: center;
   font-size: 1.25rem;
 }
-.headerIcon{
+.headerIcon {
   font-size: 1rem;
-  text-align: right; 
+  text-align: right;
 }
 .timer {
   box-sizing: content-box;
-  width: 75%;
-  border: solid 1px;
-  padding: 5px;
+justify-content: center;
+}
+.timerFace{
+  font-size: 1.75rem;
+  box-sizing: border-box;
+  font-family: "Raleway", cursive;
+  font-weight: bold;
+  
+
 }
