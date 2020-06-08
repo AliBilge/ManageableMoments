@@ -14,6 +14,7 @@ class tasktimer extends React.Component {
         return (
             <Timer
                 initialTime={this.time}
+                startImmediately={false}
                 direction="backward"
             >
                 {({ start, resume, pause, stop, reset, timerState }) => (
