@@ -2,6 +2,7 @@ import * as React from 'react';
 import './App.css';
 import { Grid, Container, Icon, Button, Segment, Progress } from "semantic-ui-react";
 import Timer from "react-compound-timer";
+import Tasktimer from "./components/tasktimer";
 
 function App() {
   return (
@@ -36,33 +37,8 @@ function App() {
       <Grid container columns={3}>
         <Grid.Column></Grid.Column>
         <Grid.Column className="timer">
-          <Timer
-            initialTime={1500000}
-            direction="backward"
-          >
-            {({ start, resume, pause, stop, reset, timerState }) => (
-              <React.Fragment>
-                <Container className="timerFace">
-                  <Timer.Minutes /> minutes<br/>
-                    <Timer.Seconds /> seconds
-                  <br />
-                  <button className=" ui tiny orange button" onClick={start}>
-                    <i className="play icon"></i>
-                  </button>
-                  <button className= " ui tiny orange button" onClick={pause}>
-                    <i className="pause icon"></i>
-                  </button>
-                  <button className="ui tiny orange button" onClick={stop}>
-                    <i className="stop icon"></i>
-                  </button>
-                  <button className="ui tiny orange button" onClick={reset}>
-                    <i className="repeat icon"></i>
-                  </button>
-                </Container>
-              </React.Fragment>
-            )}
-          </Timer>
-
+     < Tasktimer time = {300000}/>
+     <Tasktimer time = {1500000}/>
 
         </Grid.Column>
         <Grid.Column></Grid.Column>

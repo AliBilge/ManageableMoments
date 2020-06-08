@@ -1,7 +1,14 @@
 # ManageableMoments
-"TechCareers Cohort 3 Capstone Project"
 
-AVAILABLE SCRIPTS
+MANAGEABLE MOMENTS APP
+
+TechCareers Cohort 3 Capstone Project
+
+Code by: 
+
+
+
+To use this app, please install the following:
 
 • npx create-react-app 
 
