@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './App.css';
-import { Grid, Container, Icon, Button, Segment, Progress } from "semantic-ui-react";
+import { Grid, Container, Icon, Button, Segments } from "semantic-ui-react";
 import Timer from "react-compound-timer";
 import Tasktimer from "./components/tasktimer";
 
@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <Grid container columns={5}>
-        <Grid.Column></Grid.Column>
+
         <Grid.Column className="headerIcon">
           <i className="calendar check outline icon massive"></i>
         </Grid.Column>
@@ -34,18 +34,17 @@ function App() {
         </Grid.Column>
         <Grid.Column></Grid.Column>
       </Grid>
-      <Grid container columns={3}>
+      <Grid container columns={5}>
         <Grid.Column></Grid.Column>
         <Grid.Column className="timer">
-     < Tasktimer time = {300000}/>
-     <Tasktimer time = {1500000}/>
-
+          < Tasktimer time={300000} /><h4>BREAK TIME</h4>
+          </Grid.Column>
+          <Grid.Column></Grid.Column>
+          <Grid.Column className="timer">
+          <Tasktimer time={1500000} /><h4>TASK TIME</h4>
         </Grid.Column>
         <Grid.Column></Grid.Column>
       </Grid>
-
-
-
       <Grid container columns={3}>
         <Grid.Column></Grid.Column>
         <Grid.Column>

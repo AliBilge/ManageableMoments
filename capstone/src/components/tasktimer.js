@@ -21,19 +21,21 @@ class tasktimer extends React.Component {
                         <Container className="timerFace">
                             <Timer.Minutes /> minutes<br />
                             <Timer.Seconds /> seconds
-                  <br />
-                            <button className=" ui tiny orange button" onClick={start}>
+                  <br /><br/>
+                  <Button.Group>
+                            <button className=" ui mini orange button" onClick={start}>
                                 <i className="play icon"></i>
                             </button>
-                            <button className=" ui tiny orange button" onClick={pause}>
+                            <button className=" ui mini orange button" onClick={pause}>
                                 <i className="pause icon"></i>
                             </button>
-                            <button className="ui tiny orange button" onClick={stop}>
+                            <button className="ui mini orange button" onClick={stop}>
                                 <i className="stop icon"></i>
                             </button>
-                            <button className="ui tiny orange button" onClick={reset}>
+                            <button className="ui mini orange button" onClick={reset}>
                                 <i className="repeat icon"></i>
                             </button>
+                            </Button.Group>
                         </Container>
                     </React.Fragment>
                 )}
