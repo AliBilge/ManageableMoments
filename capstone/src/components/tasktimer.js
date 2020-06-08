@@ -18,7 +18,7 @@ class tasktimer extends React.Component {
             >
                 {({ start, resume, pause, stop, reset, timerState }) => (
                     <React.Fragment>
-                        <Container fluid className="timerFace">
+                        <Container className="timerFace">
                             <Timer.Minutes /> minutes<br />
                             <Timer.Seconds /> seconds
                   <br /><br/>
