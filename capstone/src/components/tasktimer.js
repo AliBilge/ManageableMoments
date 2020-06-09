@@ -15,6 +15,7 @@ class tasktimer extends React.Component {
             <Timer
                 initialTime={this.time}
                 startImmediately={false}
+                startOnClick={true}
                 direction="backward"
             >
                 {({ start, resume, pause, stop, reset, timerState }) => (
@@ -22,22 +23,19 @@ class tasktimer extends React.Component {
                         <Container className="timerFace">
                             <Timer.Minutes /> minutes<br />
                             <Timer.Seconds /> seconds
-                  <br /><br/>
-                  </Container>
+                  <br /><br />
+                        </Container>
 
-                  <Button.Group>
-                            <button className=" ui mini orange button" onClick={start}>
+                        <Button.Group size='large'>
+                            <button className=" ui orange button" onClick={start}>
                                 <i className="play icon"></i>
                             </button>
-                            <button className=" ui mini orange button" onClick={pause}>
+                            <button className=" ui orange button" onClick={pause}>
                                 <i className="pause icon"></i>
-                            </button>
-                            <button className="ui mini orange button" onClick={stop}>
-                                <i className="stop icon"></i>
-                            </button>
-                            <button className="ui mini orange button" onClick={reset}>
-                                <i className="repeat icon"></i>
-                            </button>
+                                </button>
+                                <button className="ui orange button" onClick={reset}>
+                                    <i className="repeat icon"></i>
+                                </button>
                             </Button.Group>
                         
                     </React.Fragment>
@@ -45,7 +43,7 @@ class tasktimer extends React.Component {
 
             </Timer>
 
-        );
+                );
     }
 }
 export default tasktimer;

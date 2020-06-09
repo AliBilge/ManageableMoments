@@ -27,16 +27,12 @@ h4, .timerFace {
 .headerText {
   align-content: left ;
 }
-.timer {
-  box-sizing: content-box;
-justify-content: center;
-}
 .timerFace{
-  box-sizing: border-box;
-  align-content: justify;
+  box-sizing: content-box;
+  align-content: center;
+  padding: 20px;
   font-family: "Slackey", cursive;
   font-weight: bold;
-  border: solid 2px rgb(209, 143, 21);
-  
-
+  border: solid 4px rgb(238, 161, 18);
+  border-radius:5px;
 }
