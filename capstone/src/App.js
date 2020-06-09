@@ -38,11 +38,11 @@ function App() {
       <Grid container columns={5}>
         <Grid.Column></Grid.Column>
         <Grid.Column className="timer">
-          < Tasktimer time={300000} /><h3>BREAK TIME</h3>
+          < Tasktimer time={300000} /><h4>BREAK TIME</h4>
           </Grid.Column>
           <Grid.Column></Grid.Column>
           <Grid.Column className="timer">
-          <Tasktimer time={1500000} /><h3>TASK TIME</h3>
+          <Tasktimer time={1500000} /><h4>TASK TIME</h4>
         </Grid.Column>
         <Grid.Column></Grid.Column>
       </Grid>
