@@ -7,6 +7,8 @@ TechCareers Cohort 3 Capstone Project
 Code by: 
 
 
+PUBLIC TRELLO BOARD LINK : https://trello.com/b/46mGWsUS/capstone
+
 
 To use this app, please install the following:
 
@@ -15,3 +17,5 @@ To use this app, please install the following:
 • npm install semantic-ui-react
 
 • npm install react-compound-timer
+
+
