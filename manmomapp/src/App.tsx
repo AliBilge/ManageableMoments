@@ -30,20 +30,18 @@ function App() {
     {/** This where the timer starts */}
       <div>
       <Timer
-    initialTime={55000}
+    initialTime={5500000}
     startImmediately={false}
     direction="backward"
 >
     {({ start, resume, pause, stop, reset, timerState }: any) => (
         <React.Fragment>
             <div>
-                <Timer.Days /> days
                 <Timer.Hours /> hours
                 <Timer.Minutes /> minutes
                 <Timer.Seconds /> seconds
-                <Timer.Milliseconds /> milliseconds
             </div>
-            <div>{timerState}</div>
+             {/** <div>{timerState}</div> */}
             <br />
             <div>
                 <button onClick={start}>Start</button>
