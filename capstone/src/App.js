@@ -8,7 +8,8 @@ function App() {
   return (
     <div className="App">
 
-      <Grid container columns={8}>
+      <Grid container columns={8}>  
+      <Grid.Row></Grid.Row>
         <Grid.Column className="headerIcon">
           <i className="calendar check outline icon massive"></i>
         </Grid.Column>
@@ -17,7 +18,7 @@ function App() {
         </Grid.Column>
         <Grid.Column></Grid.Column>
       </Grid>
-      <Grid container columns={5}>
+      <Grid container columns={5}> 
         <Grid.Column></Grid.Column>
         <Grid.Column>
           <button className="circular orange ui icon button">
