@@ -26,4 +26,4 @@ During the pandemic, remote work has become the new "norm", allowing for increas
 
 
 The front end demonstrates the use of React, Semantic UI React, and a basic fundamental understanding of HTML5, CSS, Javascript using Visual Studio Code.
-The back end demonstrates the use of the MVC system of API, using Postman, and Visual Community 2019.
+The back end demonstrates the use of the MVC system of API, using Postman, and Visual Studio Community 2019.
