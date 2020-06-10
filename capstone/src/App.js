@@ -18,6 +18,7 @@ function App() {
         </Grid.Column>
         <Grid.Column></Grid.Column>
       </Grid>
+      {/*  ===============  Date slider  =====================*/}
       <Grid container columns={5}> 
         <Grid.Column></Grid.Column>
         <Grid.Column>
@@ -35,7 +36,8 @@ function App() {
         </Grid.Column>
         <Grid.Column></Grid.Column>
       </Grid>
-      <Grid container columns={5}>
+      {/*  ===============  Timers task block =====================*/}
+      <Grid container columns={5} stackable>
         <Grid.Column></Grid.Column>
         <Grid.Column className="timer">
           < Tasktimer time={300000} /><h4>BREAK TIME</h4>
@@ -46,7 +48,9 @@ function App() {
         </Grid.Column>
         <Grid.Column></Grid.Column>
       </Grid>
-      <Grid container columns={3}>
+
+      {/*  ===============  Priority task block =====================*/}
+      <Grid container columns={3} stackable>
         <Grid.Column></Grid.Column>
         <Grid.Column>
           <div className="ui raised segments">
@@ -60,7 +64,9 @@ function App() {
         </Grid.Column>
         <Grid.Column></Grid.Column>
       </Grid>
-      <Grid container columns={3}>
+
+      {/*  ===============  Additional tasks block =====================*/}
+      <Grid container columns={3} stackable>
         <Grid.Column></Grid.Column>
         <Grid.Column>
           <div className="ui raised segments">
